@@ -1,5 +1,5 @@
 resource "aws_security_group" "main" {
-  name        = var.sg_name # catalogue
+  name        = var.sg_names # catalogue
   description = var.sg_description
   vpc_id      = var.vpc_id
 
@@ -15,7 +15,7 @@ resource "aws_security_group" "main" {
     var.sg_tags,
     local.common_tags,
     {
-        Name = "${local.common_name_suffix}-${var.sg_name}"  # roboshop-dev-catalogue
+        Name = "${local.common_name_suffix}-${var.sg_names}"  # roboshop-dev-catalogue
     }
   )
 }
